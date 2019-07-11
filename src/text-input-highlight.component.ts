@@ -89,8 +89,8 @@ export interface TagMouseEvent {
       class="text-highlight-element"
       [ngStyle]="highlightElementContainerStyle"
       [innerHtml]="highlightedText"
-      #highlightElement>
-    </div>
+      #highlightElement
+    ></div>
   `
 })
 export class TextInputHighlightComponent implements OnChanges, OnDestroy {
@@ -277,17 +277,14 @@ export class TextInputHighlightComponent implements OnChanges, OnDestroy {
       .forEach(tag => {
         if (tag.indices.start > tag.indices.end) {
           throw new Error(
-            `Highlight tag with indices [${tag.indices.start}, ${tag.indices
-              .end}] cannot start after it ends.`
+            `Highlight tag with indices [${tag.indices.start}, ${tag.indices.end}] cannot start after it ends.`
           );
         }
 
         prevTags.forEach(prevTag => {
           if (overlaps(prevTag, tag)) {
             throw new Error(
-              `Highlight tag with indices [${tag.indices.start}, ${tag.indices
-                .end}] overlaps with tag [${prevTag.indices.start}, ${prevTag
-                .indices.end}]`
+              `Highlight tag with indices [${tag.indices.start}, ${tag.indices.end}] overlaps with tag [${prevTag.indices.start}, ${prevTag.indices.end}]`
             );
           }
         });
@@ -324,7 +321,7 @@ export class TextInputHighlightComponent implements OnChanges, OnDestroy {
     this.cdr.detectChanges();
     this.highlightTagElements = Array.from(
       this.highlightElement.nativeElement.getElementsByTagName('span')
-    ).map((element: HTMLElement) => {
+    ).map((element: any) => {
       return { element, clientRect: element.getBoundingClientRect() };
     });
   }
