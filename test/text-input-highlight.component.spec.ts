@@ -48,6 +48,7 @@ class TestComponent {
   tagMouseEnter = sinon.spy();
   tagMouseLeave = sinon.spy();
   textInputValue: string;
+  refresh = sinon.spy();
 }
 
 function createComponent({
@@ -227,18 +228,6 @@ describe('mwl-text-input-highlight component', () => {
     })
   );
 
-  it('should throw when the start index of a tag is more than the end index', () => {
-    expect(
-      fakeAsync(() => {
-        const { fixture } = createComponent({
-          text: 'this is some text',
-          tags: [{ indices: { start: 12, end: 8 } }]
-        });
-        flushTagsChanges(fixture);
-      })
-    ).to.throw();
-  });
-
   it(
     'should skip tags where the tag indices dont exist on the textarea value',
     fakeAsync(() => {
@@ -252,21 +241,6 @@ describe('mwl-text-input-highlight component', () => {
       );
     })
   );
-
-  it('should throw when tag indices overlap', () => {
-    expect(
-      fakeAsync(() => {
-        const { fixture } = createComponent({
-          text: 'this is some text',
-          tags: [
-            { indices: { start: 8, end: 12 } },
-            { indices: { start: 6, end: 10 } }
-          ]
-        });
-        flushTagsChanges(fixture);
-      })
-    ).to.throw();
-  });
 
   it(
     'should fire the mouse clicked event',
@@ -407,6 +381,17 @@ describe('mwl-text-input-highlight component', () => {
       });
     })
   );
+
+  it('should refresh when textarea is resized', fakeAsync(() => {
+    const { textarea, fixture } = createComponent({
+      text: 'this is some text',
+      tags: [{ indices: { start: 8, end: 12 } }]
+    });
+    flushTagsChanges(fixture);
+    textarea.triggerEventHandler('mouseup', {})
+    fixture.detectChanges();
+    expect(fixture.componentInstance.refresh.calledOnce);
+  }));
 
   it(
     'should not break with html characters',

@@ -1,6 +1,40 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.6.4](https://github.com/mattlewis92/angular-text-input-highlight/compare/v1.6.3...v1.6.4) (2020-07-10)
+
+### [1.6.3](https://github.com/mattlewis92/angular-text-input-highlight/compare/v1.6.2...v1.6.3) (2020-07-10)
+
+### [1.6.2](https://github.com/mattlewis92/angular-text-input-highlight/compare/v1.6.1...v1.6.2) (2020-07-10)
+
+### [1.6.1](https://github.com/mattlewis92/angular-text-input-highlight/compare/v1.4.0...v1.6.1) (2020-07-09)
+
+
+### Bug Fixes
+
+* allow latest angular versions in peer dependencies ([0f07483](https://github.com/mattlewis92/angular-text-input-highlight/commit/0f074830aaff4752b2bc1d41c92905a1d392fb1b))
+* update highlight positioning when resizing textarea ([6f8d633](https://github.com/mattlewis92/angular-text-input-highlight/commit/6f8d633f3166b938d07b4e9898ae26a477a31ee1))
+
+<a name="1.4.2"></a>
+## [1.4.2](https://github.com/mattlewis92/angular-text-input-highlight/compare/v1.4.1...v1.4.2) (2020-03-05)
+
+
+### Bug Fixes
+
+* allow latest angular versions in peer dependencies ([0f07483](https://github.com/mattlewis92/angular-text-input-highlight/commit/0f07483))
+
+
+
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/mattlewis92/angular-text-input-highlight/compare/v1.4.0...v1.4.1) (2020-02-12)
+
+
+### Bug Fixes
+
+* update highlight positioning when resizing textarea ([6f8d633](https://github.com/mattlewis92/angular-text-input-highlight/commit/6f8d633))
+
+
 
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/mattlewis92/angular-text-input-highlight/compare/v1.3.1...v1.4.0) (2018-06-20)
