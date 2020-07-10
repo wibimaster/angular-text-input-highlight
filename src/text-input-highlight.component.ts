@@ -130,6 +130,11 @@ export class TextInputHighlightComponent implements OnChanges, OnDestroy {
   @Output() tagMouseLeave = new EventEmitter<TagMouseEvent>();
 
   /**
+   * Called when a fatal error is thrown
+   */
+  @Output() errorEvent: EventEmitter<string> = new EventEmitter<string>();
+
+  /**
    * @private
    */
   highlightElementContainerStyle: { [key: string]: string } = {};
@@ -272,6 +277,7 @@ export class TextInputHighlightComponent implements OnChanges, OnDestroy {
 
     const prevTags: HighlightTag[] = [];
     const parts: string[] = [];
+    let errorThrown: boolean = false;
 
     [...this.tags]
       .sort((tagA, tagB) => {
@@ -279,19 +285,29 @@ export class TextInputHighlightComponent implements OnChanges, OnDestroy {
       })
       .forEach(tag => {
         if (tag.indices.start > tag.indices.end) {
-          throw new Error(
-            `Highlight tag with indices [${tag.indices.start}, ${tag.indices.end}] cannot start after it ends.`
-          );
+          this.errorEvent.emit(`Highlight tag with indices [${tag.indices.start}, ${tag.indices.end}] cannot start after it ends.`);
+          errorThrown = true;
+          return;
+          // throw new Error(
+          //   `Highlight tag with indices [${tag.indices.start}, ${tag.indices.end}] cannot start after it ends.`
+          // );
         }
 
         prevTags.forEach(prevTag => {
           if (overlaps(prevTag, tag)) {
-            throw new Error(
-              `Highlight tag with indices [${tag.indices.start}, ${tag.indices.end}] overlaps with tag [${prevTag.indices.start}, ${prevTag.indices.end}]`
-            );
+
+            this.errorEvent.emit(`Highlight tag with indices [${tag.indices.start}, ${tag.indices.end}] overlaps with tag [${prevTag.indices.start}, ${prevTag.indices.end}]`);
+            errorThrown = true;
+            return;
+            // throw new Error(
+            //   `Highlight tag with indices [${tag.indices.start}, ${tag.indices.end}] overlaps with tag [${prevTag.indices.start}, ${prevTag.indices.end}]`
+            // );
           }
         });
 
+        if (errorThrown) {
+          return;
+        }
         // TODO - implement this as an ngFor of items that is generated in the template for a cleaner solution
 
         const expectedTagLength = tag.indices.end - tag.indices.start;

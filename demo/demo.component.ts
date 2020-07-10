@@ -19,7 +19,8 @@ import { HighlightTag } from '../src/';
         [textInputElement]="textarea"
         (tagMouseEnter)="addDarkClass($event.target)"
         (tagMouseLeave)="removeDarkClass($event.target)"
-        (tagClick)="tagClicked = $event.tag">
+        (tagClick)="tagClicked = $event.tag"
+        (errorEvent)="addTagErrorEvent($event)">
       </mwl-text-input-highlight>
     </div>
     <br>
@@ -100,5 +101,9 @@ export class DemoComponent implements OnInit {
   removeDarkClass(elm: HTMLElement) {
     elm.classList.remove('bg-blue-dark');
     elm.classList.remove('bg-pink-dark');
+  }
+
+  addTagErrorEvent(message: string): void {
+    console.warn(`Error thrown: ${message}`)
   }
 }
