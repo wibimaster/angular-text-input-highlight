@@ -1,0 +1,38 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'gh-pages' ]
+2 info using npm@6.14.5
+3 info using node@v12.18.2
+4 verbose config Skipping project config: /home/node/.npmrc. (matches userconfig)
+5 verbose run-script [ 'pregh-pages', 'gh-pages', 'postgh-pages' ]
+6 info lifecycle angular-text-input-highlight-fork@1.6.3~pregh-pages: angular-text-input-highlight-fork@1.6.3
+7 info lifecycle angular-text-input-highlight-fork@1.6.3~gh-pages: angular-text-input-highlight-fork@1.6.3
+8 verbose lifecycle angular-text-input-highlight-fork@1.6.3~gh-pages: unsafe-perm in lifecycle true
+9 verbose lifecycle angular-text-input-highlight-fork@1.6.3~gh-pages: PATH: /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/node/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/node/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+10 verbose lifecycle angular-text-input-highlight-fork@1.6.3~gh-pages: CWD: /home/node
+11 silly lifecycle angular-text-input-highlight-fork@1.6.3~gh-pages: Args: [
+11 silly lifecycle   '-c',
+11 silly lifecycle   'git checkout gh-pages && git merge master --no-edit --no-ff && npm run build:demo && npm run compodoc && git add . && git commit -m "chore: build demo and docs" && git push && git checkout master'
+11 silly lifecycle ]
+12 silly lifecycle angular-text-input-highlight-fork@1.6.3~gh-pages: Returned: code: 1  signal: null
+13 info lifecycle angular-text-input-highlight-fork@1.6.3~gh-pages: Failed to exec gh-pages script
+14 verbose stack Error: angular-text-input-highlight-fork@1.6.3 gh-pages: `git checkout gh-pages && git merge master --no-edit --no-ff && npm run build:demo && npm run compodoc && git add . && git commit -m "chore: build demo and docs" && git push && git checkout master`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/index.js:332:16)
+14 verbose stack     at EventEmitter.emit (events.js:315:20)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:55:14)
+14 verbose stack     at ChildProcess.emit (events.js:315:20)
+14 verbose stack     at maybeClose (internal/child_process.js:1021:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:286:5)
+15 verbose pkgid angular-text-input-highlight-fork@1.6.3
+16 verbose cwd /home/node
+17 verbose Linux 5.4.0-39-generic
+18 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "gh-pages"
+19 verbose node v12.18.2
+20 verbose npm  v6.14.5
+21 error code ELIFECYCLE
+22 error errno 1
+23 error angular-text-input-highlight-fork@1.6.3 gh-pages: `git checkout gh-pages && git merge master --no-edit --no-ff && npm run build:demo && npm run compodoc && git add . && git commit -m "chore: build demo and docs" && git push && git checkout master`
+23 error Exit status 1
+24 error Failed at the angular-text-input-highlight-fork@1.6.3 gh-pages script.
+24 error This is probably not a problem with npm. There is likely additional logging output above.
+25 verbose exit [ 1, true ]

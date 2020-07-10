@@ -1,0 +1,46 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'release' ]
+2 info using npm@6.14.5
+3 info using node@v12.18.2
+4 verbose config Skipping project config: /home/node/.npmrc. (matches userconfig)
+5 verbose run-script [ 'prerelease', 'release', 'postrelease' ]
+6 info lifecycle angular-text-input-highlight-fork@1.6.2~prerelease: angular-text-input-highlight-fork@1.6.2
+7 verbose lifecycle angular-text-input-highlight-fork@1.6.2~prerelease: unsafe-perm in lifecycle true
+8 verbose lifecycle angular-text-input-highlight-fork@1.6.2~prerelease: PATH: /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/node/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+9 verbose lifecycle angular-text-input-highlight-fork@1.6.2~prerelease: CWD: /home/node
+10 silly lifecycle angular-text-input-highlight-fork@1.6.2~prerelease: Args: [ '-c', 'npm test' ]
+11 silly lifecycle angular-text-input-highlight-fork@1.6.2~prerelease: Returned: code: 0  signal: null
+12 info lifecycle angular-text-input-highlight-fork@1.6.2~release: angular-text-input-highlight-fork@1.6.2
+13 verbose lifecycle angular-text-input-highlight-fork@1.6.2~release: unsafe-perm in lifecycle true
+14 verbose lifecycle angular-text-input-highlight-fork@1.6.2~release: PATH: /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/node/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+15 verbose lifecycle angular-text-input-highlight-fork@1.6.2~release: CWD: /home/node
+16 silly lifecycle angular-text-input-highlight-fork@1.6.2~release: Args: [ '-c', 'npm run release:git && npm run release:npm' ]
+17 silly lifecycle angular-text-input-highlight-fork@1.6.2~release: Returned: code: 0  signal: null
+18 info lifecycle angular-text-input-highlight-fork@1.6.2~postrelease: angular-text-input-highlight-fork@1.6.2
+19 verbose lifecycle angular-text-input-highlight-fork@1.6.2~postrelease: unsafe-perm in lifecycle true
+20 verbose lifecycle angular-text-input-highlight-fork@1.6.2~postrelease: PATH: /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/node/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+21 verbose lifecycle angular-text-input-highlight-fork@1.6.2~postrelease: CWD: /home/node
+22 silly lifecycle angular-text-input-highlight-fork@1.6.2~postrelease: Args: [ '-c', 'npm run build:clean && npm run gh-pages' ]
+23 silly lifecycle angular-text-input-highlight-fork@1.6.2~postrelease: Returned: code: 1  signal: null
+24 info lifecycle angular-text-input-highlight-fork@1.6.2~postrelease: Failed to exec postrelease script
+25 verbose stack Error: angular-text-input-highlight-fork@1.6.2 postrelease: `npm run build:clean && npm run gh-pages`
+25 verbose stack Exit status 1
+25 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/index.js:332:16)
+25 verbose stack     at EventEmitter.emit (events.js:315:20)
+25 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:55:14)
+25 verbose stack     at ChildProcess.emit (events.js:315:20)
+25 verbose stack     at maybeClose (internal/child_process.js:1021:16)
+25 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:286:5)
+26 verbose pkgid angular-text-input-highlight-fork@1.6.2
+27 verbose cwd /home/node
+28 verbose Linux 5.4.0-39-generic
+29 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "release"
+30 verbose node v12.18.2
+31 verbose npm  v6.14.5
+32 error code ELIFECYCLE
+33 error errno 1
+34 error angular-text-input-highlight-fork@1.6.2 postrelease: `npm run build:clean && npm run gh-pages`
+34 error Exit status 1
+35 error Failed at the angular-text-input-highlight-fork@1.6.2 postrelease script.
+35 error This is probably not a problem with npm. There is likely additional logging output above.
+36 verbose exit [ 1, true ]

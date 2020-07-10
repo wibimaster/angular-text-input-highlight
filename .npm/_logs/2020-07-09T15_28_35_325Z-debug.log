@@ -1,0 +1,49 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'login' ]
+2 info using npm@6.14.5
+3 info using node@v12.18.2
+4 verbose config Skipping project config: /home/node/.npmrc. (matches userconfig)
+5 verbose npm-session cc3c54896ce99245
+6 verbose web login before first POST
+7 http fetch POST 401 https://registry.npmjs.org/-/v1/login 306ms
+8 verbose web login not supported, trying couch
+9 verbose login before first PUT {
+9 verbose login   _id: 'org.couchdb.user:mybestpro',
+9 verbose login   name: 'mybestpro',
+9 verbose login   password: 'XXXXX',
+9 verbose login   type: 'user',
+9 verbose login   roles: [],
+9 verbose login   date: '2020-07-09T15:28:32.740Z'
+9 verbose login }
+10 http fetch PUT 401 https://registry.npmjs.org/-/user/org.couchdb.user:mybestpro 1067ms
+11 verbose adduser before first PUT {
+11 verbose adduser   _id: 'org.couchdb.user:mybestpro',
+11 verbose adduser   name: 'mybestpro',
+11 verbose adduser   password: 'XXXXX',
+11 verbose adduser   email: 'npm@wengo.com',
+11 verbose adduser   type: 'user',
+11 verbose adduser   roles: [],
+11 verbose adduser   date: '2020-07-09T15:28:33.814Z'
+11 verbose adduser }
+12 http fetch PUT 401 https://registry.npmjs.org/-/user/org.couchdb.user:mybestpro 1489ms
+13 verbose stack Error: Unable to authenticate, need: Basic
+13 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/npm-registry-fetch/check-response.js:94:17
+13 verbose stack     at processTicksAndRejections (internal/process/task_queues.js:97:5)
+14 verbose statusCode 401
+15 verbose cwd /home/node
+16 verbose Linux 5.4.0-39-generic
+17 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "login"
+18 verbose node v12.18.2
+19 verbose npm  v6.14.5
+20 error code E401
+21 error Incorrect or missing password.
+22 error If you were trying to login, change your password, create an
+22 error authentication token or enable two-factor authentication then
+22 error that means you likely typed your password in incorrectly.
+22 error Please try again, or recover your password at:
+22 error     https://www.npmjs.com/forgot
+22 error
+22 error If you were doing some other operation then your saved credentials are
+22 error probably out of date. To correct this please try logging in again with:
+22 error     npm login
+23 verbose exit [ 1, true ]

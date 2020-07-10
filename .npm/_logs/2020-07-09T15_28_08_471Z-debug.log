@@ -1,0 +1,31 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'login' ]
+2 info using npm@6.14.5
+3 info using node@v12.18.2
+4 verbose config Skipping project config: /home/node/.npmrc. (matches userconfig)
+5 verbose npm-session e8a5d5bcb6721b45
+6 verbose web login before first POST
+7 http fetch POST 401 https://registry.npmjs.org/-/v1/login 291ms
+8 verbose web login not supported, trying couch
+9 warn Name may not contain non-url-safe chars
+10 verbose stack Error: canceled
+10 verbose stack     at Interface.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/read/lib/read.js:66:13)
+10 verbose stack     at Interface.emit (events.js:315:20)
+10 verbose stack     at Interface._ttyWrite (readline.js:866:16)
+10 verbose stack     at ReadStream.onkeypress (readline.js:205:10)
+10 verbose stack     at ReadStream.emit (events.js:315:20)
+10 verbose stack     at emitKeys (internal/readline/utils.js:335:14)
+10 verbose stack     at emitKeys.next (<anonymous>)
+10 verbose stack     at ReadStream.onData (readline.js:1133:36)
+10 verbose stack     at ReadStream.emit (events.js:315:20)
+10 verbose stack     at addChunk (_stream_readable.js:295:12)
+10 verbose stack     at readableAddChunk (_stream_readable.js:271:9)
+10 verbose stack     at ReadStream.Readable.push (_stream_readable.js:212:10)
+10 verbose stack     at TTY.onStreamRead (internal/stream_base_commons.js:186:23)
+11 verbose cwd /home/node
+12 verbose Linux 5.4.0-39-generic
+13 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "login"
+14 verbose node v12.18.2
+15 verbose npm  v6.14.5
+16 error canceled
+17 verbose exit [ 1, true ]
